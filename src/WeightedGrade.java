@@ -26,11 +26,16 @@ public class WeightedGrade {
         this.percentage = percentage;
     }
 
-    public String getAnswer() {
+    public Double getAnswer() {
         double weightedGrade=0;
         for( int i = 0; i < earnedGrade.size(); i++){
             weightedGrade += earnedGrade.get(i) / totalGrade.get(i) * percentage.get(i);
         }
+        return weightedGrade;
+    }
+
+    public String getAnswer(Double weightedGrade) {
+
         if (90 <= weightedGrade && weightedGrade <= 100)  //decide if the grade belongs to A
             return "A";
         if (80 <= weightedGrade && weightedGrade < 90) //decide if the grade belongs to B
@@ -43,3 +48,4 @@ public class WeightedGrade {
         return "F";//if the grade doesn't belong to the above, it is F
     }
 }
+

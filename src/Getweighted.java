@@ -41,7 +41,9 @@ public class Getweighted {
         grade.setTotalGrade((ArrayList<Double>) a);// pass value to TotalGrade
         grade.setEarnedGrade((ArrayList<Double>)  b);// pass value EarnedGrade
         grade.setPercentage((ArrayList<Double>) c);// pass value Percentage
-        String s= grade.getAnswer(); //call the method to do the math
+        Double weightedGrade = grade.getAnswer();
+        String s= grade.getAnswer(weightedGrade); //call the method to do the math
+        System.out.println("Your point is : "+weightedGrade);
         System.out.println("Your class is : "+s);
 
 
